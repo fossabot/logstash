@@ -1,3 +1,3 @@
 # logstash
 Logstash configurations
-test6
+test7
