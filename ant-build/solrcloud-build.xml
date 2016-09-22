@@ -1,0 +1,17 @@
+<project name="Solr Cloud Logstash">
+    <description>
+        Jenkins Ant file for Solr Cloud Logstash
+    </description>
+ <property name="trunk.dir" value="${basedir}"/>
+ <basename property="app.name" file="${basedir}"/>
+ <property name="app.dir" value="${dest.dir}/${app.name}"/>
+ <property environment="env"/>
+ 
+ <target name="copy_configuration">
+	<copy todir="${dest.dir}" overwrite="true" force="true" >
+        <resources>
+            <file file="${env.WORKSPACE}/solr/test.txt"/>
+        </resources>
+	</copy>
+ </target>
+</project>
