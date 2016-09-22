@@ -2,23 +2,20 @@
     <description>
         Jenkins Ant file for Solr Cloud Logstash
     </description>
- <property name="trunk.dir" value="${basedir}"/>
- <basename property="app.name" file="${basedir}"/>
- <property name="app.dir" value="${dest_dir}/${app.name}"/>
- <property environment="env"/>
- 
- <target name="copy-configuration">
-	<copy todir="${dest_dir}" overwrite="true" force="true" >
-        <resources>
-            <file file="${env.WORKSPACE}/configuration/solr/solr.conf"/>
-        </resources>
-	</copy>
-    <replaceregexp 
-        file="${dest.dir}/solr.conf" 
-        match="solr_log_path" 
-        replace="${solr_log_path}" 
-        byline="true"/>
- </target>
+    <property environment="env"/>
+    
+    <target name="copy-configuration">
+        <copy todir="${dest_dir}" overwrite="true" force="true" >
+            <resources>
+                <file file="${env.WORKSPACE}/configuration/solr/solr.conf"/>
+            </resources>
+        </copy>
+        <replaceregexp 
+            file="${dest.dir}/solr.conf" 
+            match="solr_log_path" 
+            replace="${solr_log_path}" 
+            byline="true"/>
+    </target>
  <!--
  <target name="restart-logstash">
     <exec failonerror="true" dir="${dest.dir}" executable="sudo">
