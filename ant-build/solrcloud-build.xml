@@ -4,19 +4,19 @@
     </description>
  <property name="trunk.dir" value="${basedir}"/>
  <basename property="app.name" file="${basedir}"/>
- <property name="app.dir" value="${dest.dir}/${app.name}"/>
+ <property name="app.dir" value="${dest_dir}/${app.name}"/>
  <property environment="env"/>
  
  <target name="copy-configuration">
-	<copy todir="${dest.dir}" overwrite="true" force="true" >
+	<copy todir="${dest_dir}" overwrite="true" force="true" >
         <resources>
             <file file="${env.WORKSPACE}/configuration/solr/solr.conf"/>
         </resources>
 	</copy>
     <replaceregexp 
         file="${dest.dir}/solr.conf" 
-        match="path_value" 
-        replace="${solr.log.path}" 
+        match="solr_log_path" 
+        replace="${solr_log_path}" 
         byline="true"/>
  </target>
  <!--
