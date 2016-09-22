@@ -10,7 +10,7 @@
  <target name="copy_configuration">
 	<copy todir="${dest.dir}" overwrite="true" force="true" >
         <resources>
-            <file file="${env.WORKSPACE}/solr/test.txt"/>
+            <file file="${env.WORKSPACE}/configuration/solr/test.txt"/>
         </resources>
 	</copy>
  </target>
