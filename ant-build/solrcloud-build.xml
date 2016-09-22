@@ -15,7 +15,7 @@
 	</copy>
     <replaceregexp 
         file="${dest.dir}/solr.conf" 
-        match="<path>" 
+        match="path_value" 
         replace="${solr.log.path}" 
         byline="true"/>
  </target>
