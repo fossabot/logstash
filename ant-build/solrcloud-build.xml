@@ -4,7 +4,7 @@
     </description>
     <property environment="env"/>
     
-    <target name="copy-configuration">
+    <target name="copy-solr-configuration">
         <copy todir="${dest_dir}" overwrite="true" force="true" >
             <resources>
                 <file file="${env.WORKSPACE}/configuration/solr/solr.conf"/>
@@ -27,8 +27,8 @@
             byline="true"/>
         <replaceregexp 
             file="${dest_dir}/solr.conf" 
-            match="prefix_value" 
-            replace="${prefix_value}" 
+            match="prefix_solr_value" 
+            replace="${prefix_solr_value}" 
             byline="true"/>
         <replaceregexp 
             file="${dest_dir}/solr.conf" 
@@ -41,11 +41,49 @@
             replace="${secret_access_key_value}" 
             byline="true"/>
     </target>
- <!--
- <target name="restart-logstash">
-    <exec failonerror="true" dir="${dest.dir}" executable="sudo">
-        <arg line="/etc/init.d/logstash restart"/>
-    </exec>
- </target>
- -->
+    
+    <target name="copy-tomcat-configuration">
+        <copy todir="${dest_dir}" overwrite="true" force="true" >
+            <resources>
+                <file file="${env.WORKSPACE}/configuration/tomcat/tomcat.conf"/>
+            </resources>
+        </copy>
+        <replaceregexp 
+            file="${dest_dir}/tomcat.conf" 
+            match="tomcat_access_log_path" 
+            replace="${tomcat_access_log_path}" 
+            byline="true"/>
+        <replaceregexp 
+            file="${dest_dir}/tomcat.conf" 
+            match="region_value" 
+            replace="${region_value}" 
+            byline="true"/>
+        <replaceregexp 
+            file="${dest_dir}/tomcat.conf" 
+            match="bucket_value" 
+            replace="${bucket_value}" 
+            byline="true"/>
+        <replaceregexp 
+            file="${dest_dir}/tomcat.conf" 
+            match="prefix_tomcat_value" 
+            replace="${prefix_tomcat_value}" 
+            byline="true"/>
+        <replaceregexp 
+            file="${dest_dir}/tomcat.conf" 
+            match="access_key_id_value" 
+            replace="${access_key_id_value}" 
+            byline="true"/>
+        <replaceregexp 
+            file="${dest_dir}/tomcat.conf" 
+            match="secret_access_key_value" 
+            replace="${secret_access_key_value}" 
+            byline="true"/>
+    </target>
+ 
+    <target name="restart-logstash">
+        <exec failonerror="true" dir="${dest.dir}" executable="sudo">
+            <arg line="/etc/init.d/logstash restart"/>
+        </exec>
+    </target>
+ 
 </project>
