@@ -13,12 +13,11 @@
             <file file="${env.WORKSPACE}/configuration/solr/solr.conf"/>
         </resources>
 	</copy>
-    <copy 
-        file="${env.WORKSPACE}/configuration/solr/solr.conf" 
-        tofile="${dest.dir}/solr.conf" 
-        overwrite="true"
-    />
-    
+    <replaceregexp 
+        file="${dest.dir}/solr.conf" 
+        match="{path}" 
+        replace="${solr.log.path}" 
+        byline="true"/>
  </target>
  <!--
  <target name="restart-logstash">
