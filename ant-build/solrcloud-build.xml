@@ -30,6 +30,16 @@
             match="prefix_value" 
             replace="${prefix_value}" 
             byline="true"/>
+        <replaceregexp 
+            file="${dest_dir}/solr.conf" 
+            match="access_key_id_value" 
+            replace="${access_key_id_value}" 
+            byline="true"/>
+        <replaceregexp 
+            file="${dest_dir}/solr.conf" 
+            match="secret_access_key_value" 
+            replace="${secret_access_key_value}" 
+            byline="true"/>
     </target>
  <!--
  <target name="restart-logstash">
