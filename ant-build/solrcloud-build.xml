@@ -81,7 +81,7 @@
     </target>
  
     <target name="restart-logstash">
-        <exec failonerror="true" dir="${dest.dir}" executable="sudo">
+        <exec failonerror="true" dir="${dest_dir}" executable="sudo">
             <arg line="/etc/init.d/logstash restart"/>
         </exec>
     </target>
