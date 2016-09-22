@@ -7,11 +7,17 @@
  <property name="app.dir" value="${dest.dir}/${app.name}"/>
  <property environment="env"/>
  
- <target name="copy_configuration">
+ <target name="copy-configuration">
 	<copy todir="${dest.dir}" overwrite="true" force="true" >
         <resources>
             <file file="${env.WORKSPACE}/configuration/solr/test.txt"/>
         </resources>
 	</copy>
+ </target>
+ 
+ <target name="restart-logstash">
+    <exec failonerror="true" dir="${dest.dir}" executable="sudo">
+        <arg line="/etc/init.d/logstash restart"/>
+    </exec>
  </target>
 </project>
