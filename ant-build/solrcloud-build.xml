@@ -13,11 +13,18 @@
             <file file="${env.WORKSPACE}/configuration/solr/test.txt"/>
         </resources>
 	</copy>
+    <copy 
+        file="${env.WORKSPACE}/configuration/solr/solr.conf" 
+        tofile="${dest.dir}/solr.conf" 
+        overwrite="true"
+    />
+    
  </target>
- 
+ <!--
  <target name="restart-logstash">
     <exec failonerror="true" dir="${dest.dir}" executable="sudo">
         <arg line="/etc/init.d/logstash restart"/>
     </exec>
  </target>
+ -->
 </project>
