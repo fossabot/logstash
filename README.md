@@ -1,2 +1,2 @@
 # logstash
-Logstash configurations
+Various logstash configurations for transferring logs
