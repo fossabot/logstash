@@ -5,76 +5,66 @@
     <property environment="env"/>
     
     <target name="copy-solr-configuration">
-        <copy todir="${dest_dir}" overwrite="true" force="true" >
-            <resources>
-                <file file="${env.WORKSPACE}/configuration/solr/solr.conf"/>
-            </resources>
-        </copy>
         <replaceregexp 
-            file="${dest_dir}/solr.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
             match="solr_log_path" 
             replace="${solr_log_path}" 
             byline="true"/>
         <replaceregexp 
-            file="${dest_dir}/solr.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
             match="region_value" 
             replace="${region_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${dest_dir}/solr.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
             match="bucket_value" 
             replace="${bucket_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${dest_dir}/solr.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
             match="prefix_solr_value" 
             replace="${prefix_solr_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${dest_dir}/solr.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
             match="access_key_id_value" 
             replace="${access_key_id_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${dest_dir}/solr.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
             match="secret_access_key_value" 
             replace="${secret_access_key_value}" 
             byline="true"/>
     </target>
     
     <target name="copy-tomcat-configuration">
-        <copy todir="${dest_dir}" overwrite="true" force="true" >
-            <resources>
-                <file file="${env.WORKSPACE}/configuration/tomcat/tomcat.conf"/>
-            </resources>
-        </copy>
         <replaceregexp 
-            file="${dest_dir}/tomcat.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
             match="tomcat_access_log_path" 
             replace="${tomcat_access_log_path}" 
             byline="true"/>
         <replaceregexp 
-            file="${dest_dir}/tomcat.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
             match="region_value" 
             replace="${region_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${dest_dir}/tomcat.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
             match="bucket_value" 
             replace="${bucket_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${dest_dir}/tomcat.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
             match="prefix_tomcat_value" 
             replace="${prefix_tomcat_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${dest_dir}/tomcat.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
             match="access_key_id_value" 
             replace="${access_key_id_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${dest_dir}/tomcat.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
             match="secret_access_key_value" 
             replace="${secret_access_key_value}" 
             byline="true"/>
