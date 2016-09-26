@@ -1,6 +1,6 @@
-<project name="Solr Cloud Logstash">
+<project name="Solr Logstash">
     <description>
-        Jenkins Ant file for Solr Cloud Logstash
+        Jenkins Ant file for Solr Logstash
     </description>
     <property environment="env"/>
     
