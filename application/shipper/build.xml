@@ -6,27 +6,27 @@
     
     <target name="copy-shipper-configuration">
         <replaceregexp 
-            file="${env.WORKSPACE}/application/shipper/configuration/solr.conf" 
+            file="${env.WORKSPACE}/application/shipper/configuration/shipper.conf" 
             match="region_value" 
             replace="${region_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${env.WORKSPACE}/application/shipper/configuration/solr.conf" 
+            file="${env.WORKSPACE}/application/shipper/configuration/shipper.conf" 
             match="bucket_value" 
             replace="${bucket_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${env.WORKSPACE}/application/shipper/configuration/solr.conf" 
+            file="${env.WORKSPACE}/application/shipper/configuration/shipper.conf" 
             match="prefix_solr_value" 
             replace="${prefix_solr_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${env.WORKSPACE}/application/shipper/configuration/solr.conf" 
+            file="${env.WORKSPACE}/application/shipper/configuration/shipper.conf" 
             match="access_key_id_value" 
             replace="${access_key_id_value}" 
             byline="true"/>
         <replaceregexp 
-            file="${env.WORKSPACE}/application/shipper/configuration/solr.conf" 
+            file="${env.WORKSPACE}/application/shipper/configuration/shipper.conf" 
             match="secret_access_key_value" 
             replace="${secret_access_key_value}" 
             byline="true"/>
