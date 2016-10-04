@@ -1,0 +1,40 @@
+<project name="Shipper Logstash">
+    <description>
+        Jenkins Ant file for Shipper Logstash
+    </description>
+    <property environment="env"/>
+    
+    <target name="copy-shipper-configuration">
+        <replaceregexp 
+            file="${env.WORKSPACE}/application/shipper/configuration/solr.conf" 
+            match="solr_log_path" 
+            replace="${solr_log_path}" 
+            byline="true"/>
+        <replaceregexp 
+            file="${env.WORKSPACE}/application/shipper/configuration/solr.conf" 
+            match="region_value" 
+            replace="${region_value}" 
+            byline="true"/>
+        <replaceregexp 
+            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
+            match="bucket_value" 
+            replace="${bucket_value}" 
+            byline="true"/>
+        <replaceregexp 
+            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
+            match="prefix_solr_value" 
+            replace="${prefix_solr_value}" 
+            byline="true"/>
+        <replaceregexp 
+            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
+            match="access_key_id_value" 
+            replace="${access_key_id_value}" 
+            byline="true"/>
+        <replaceregexp 
+            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
+            match="secret_access_key_value" 
+            replace="${secret_access_key_value}" 
+            byline="true"/>
+    </target>
+ 
+</project>
