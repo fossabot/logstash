@@ -1,79 +1,20 @@
-<project name="Solr Logstash">
+<project name="Solr Filebeat">
     <description>
-        Jenkins Ant file for Solr Logstash
+        Jenkins Ant file for Solr Filebeat
     </description>
     <property environment="env"/>
     
     <target name="copy-solr-configuration">
         <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
+            file="${env.WORKSPACE}/application/solr/configuration/filebeat.yml" 
             match="solr_log_path" 
             replace="${solr_log_path}" 
             byline="true"/>
         <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
-            match="region_value" 
-            replace="${region_value}" 
+            file="${env.WORKSPACE}/application/solr/configuration/filebeat.yml" 
+            match="logstash_host_port" 
+            replace="${logstash_host_port}" 
             byline="true"/>
-        <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
-            match="bucket_value" 
-            replace="${bucket_value}" 
-            byline="true"/>
-        <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
-            match="prefix_solr_value" 
-            replace="${prefix_solr_value}" 
-            byline="true"/>
-        <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
-            match="access_key_id_value" 
-            replace="${access_key_id_value}" 
-            byline="true"/>
-        <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/solr.conf" 
-            match="secret_access_key_value" 
-            replace="${secret_access_key_value}" 
-            byline="true"/>
-    </target>
-    
-    <target name="copy-tomcat-configuration">
-        <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
-            match="tomcat_access_log_path" 
-            replace="${tomcat_access_log_path}" 
-            byline="true"/>
-        <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
-            match="region_value" 
-            replace="${region_value}" 
-            byline="true"/>
-        <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
-            match="bucket_value" 
-            replace="${bucket_value}" 
-            byline="true"/>
-        <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
-            match="prefix_tomcat_value" 
-            replace="${prefix_tomcat_value}" 
-            byline="true"/>
-        <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
-            match="access_key_id_value" 
-            replace="${access_key_id_value}" 
-            byline="true"/>
-        <replaceregexp 
-            file="${env.WORKSPACE}/application/solr/configuration/tomcat.conf" 
-            match="secret_access_key_value" 
-            replace="${secret_access_key_value}" 
-            byline="true"/>
-    </target>
- 
-    <target name="restart-logstash">
-        <exec failonerror="true" dir="${dest_dir}" executable="sudo">
-            <arg line="/etc/init.d/logstash restart"/>
-        </exec>
     </target>
  
 </project>
