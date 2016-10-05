@@ -49,6 +49,8 @@ filebeat:
       #fields:
       #  level: debug
       #  review: 1
+      fields:
+        application_source: solr 
 
       # Set to true to store the additional fields as top level fields instead
       # of under the "fields" sub-dictionary. In case of name conflicts with the
