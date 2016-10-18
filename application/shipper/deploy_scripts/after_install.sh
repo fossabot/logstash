@@ -1,2 +1,2 @@
 #!/bin/bash
-/etc/init.d/logstash restart
+#/etc/init.d/logstash restart
