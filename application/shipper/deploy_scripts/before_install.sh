@@ -1,4 +1,12 @@
 #!/bin/bash
+
+hostname=$(hostname)
+
+/bin/cat << EOM > /etc/hosts
+127.0.0.1   $hostname localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost6 localhost6.localdomain6
+EOM
+
 rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
 /bin/cat << EOM > /etc/yum.repos.d/logstash.repo
