@@ -5,7 +5,12 @@
     <property environment="env"/>
     
     <target name="copy-solr-configuration">
-        <replaceregexp 
+        <replaceregexp
+                file="${env.WORKSPACE}/application/solr/configuration/filebeat.yml"
+                match="tomcat_access_log_path"
+                replace="${tomcat_access_log_path}"
+                byline="true"/>
+        <replaceregexp
             file="${env.WORKSPACE}/application/solr/configuration/filebeat.yml" 
             match="solr_log_path" 
             replace="${solr_log_path}" 

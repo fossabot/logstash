@@ -7,7 +7,7 @@ filebeat:
     # Each - is a prospector. Below are the prospector specific configurations
     -
       paths:
-        - tomcat_log_path
+        - tomcat_access_log_path
       fields:
         application_source: solr.tomcat 
      
