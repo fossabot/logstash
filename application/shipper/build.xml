@@ -27,8 +27,8 @@
             byline="true"/>
          <replaceregexp 
             file="${env.WORKSPACE}/application/shipper/configuration/shipper.conf" 
-            match="prefix_solr_value" 
-            replace="${prefix_solr_value}" 
+            match="prefix_solrcloud_value"
+            replace="${prefix_solrcloud_value}"
             byline="true"/>
          <replaceregexp 
             file="${env.WORKSPACE}/application/shipper/configuration/shipper.conf" 
