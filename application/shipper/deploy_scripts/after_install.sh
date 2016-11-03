@@ -2,4 +2,4 @@
 
 service logstash restart
 
-crontab /var/dbrotate/cron.txt
+crontab /var/logstash/cron.txt

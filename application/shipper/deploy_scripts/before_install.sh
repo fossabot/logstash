@@ -19,5 +19,3 @@ enabled=1
 EOM
 
 yum -y install logstash
-
-service logstash start
