@@ -1,0 +1,20 @@
+<project name="Solr Filebeat">
+    <description>
+        Jenkins Ant file for Myjsdb Filebeat
+    </description>
+    <property environment="env"/>
+    
+    <target name="copy-myjsdb-configuration">
+        <replaceregexp
+            file="${env.WORKSPACE}/application/myjsdb/configuration/filebeat.yml"
+            match="myjsdb_log_path"
+            replace="${myjsdb_log_path}"
+            byline="true"/>
+        <replaceregexp 
+            file="${env.WORKSPACE}/application/myjsdb/configuration/filebeat.yml"
+            match="logstash_host_port" 
+            replace="${logstash_host_port}" 
+            byline="true"/>
+    </target>
+ 
+</project>
