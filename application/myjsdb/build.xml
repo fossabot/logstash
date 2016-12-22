@@ -1,4 +1,4 @@
-<project name="Solr Filebeat">
+<project name="Myjsdb Filebeat">
     <description>
         Jenkins Ant file for Myjsdb Filebeat
     </description>
