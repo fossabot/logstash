@@ -40,6 +40,11 @@
             match="prefix_myjsdb_value"
             replace="${prefix_myjsdb_value}"
             byline="true"/>
+        <replaceregexp
+                file="${env.WORKSPACE}/application/shipper/configuration/shipper.conf"
+                match="prefix_dbrotate_value"
+                replace="${prefix_dbrotate_value}"
+                byline="true"/>
     </target>
  
 </project>
