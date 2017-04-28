@@ -3,5 +3,5 @@ Various logstash configurations for transferring logs
 
 Feel free to reference and create other variants.
 
-hello 6
+hello 7
 
