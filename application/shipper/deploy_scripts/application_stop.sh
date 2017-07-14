@@ -1,3 +1,3 @@
 #!/bin/bash
 
-service logstash stop
+#service logstash stop
