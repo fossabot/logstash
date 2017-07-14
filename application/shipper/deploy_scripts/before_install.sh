@@ -20,4 +20,7 @@ autorefresh=1
 type=rpm-md
 EOM
 
+yum -y install java-1.8.0
+yum -y remove java-1.7.0-openjdk
+
 yum -y install logstash
