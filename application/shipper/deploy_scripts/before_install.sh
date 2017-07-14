@@ -10,12 +10,13 @@ EOM
 rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
 /bin/cat << EOM > /etc/yum.repos.d/logstash.repo
-[logstash-2.4]
-name=Logstash repository for 2.4.x packages
-baseurl=https://packages.elastic.co/logstash/2.4/centos
+[logstash-5.x]
+name=Elastic repository for 5.x packages
+baseurl=https://artifacts.elastic.co/packages/5.x/yum
 gpgcheck=1
-gpgkey=https://packages.elastic.co/GPG-KEY-elasticsearch
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
-EOM
+autorefresh=1
+type=rpm-md
 
 yum -y install logstash
