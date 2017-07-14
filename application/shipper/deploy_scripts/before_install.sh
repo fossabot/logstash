@@ -18,5 +18,6 @@ gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
 autorefresh=1
 type=rpm-md
+EOM
 
 yum -y install logstash
