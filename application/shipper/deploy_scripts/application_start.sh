@@ -1,3 +1,3 @@
 #!/bin/bash
 
-service logstash start
+#service logstash start
