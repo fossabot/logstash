@@ -10,9 +10,9 @@ EOM
 rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
 /bin/cat << EOM > /etc/yum.repos.d/logstash.repo
-[logstash-5.x]
-name=Elastic repository for 5.x packages
-baseurl=https://artifacts.elastic.co/packages/5.x/yum
+[logstash-5.5]
+name=Elastic repository for 5.5 packages
+baseurl=https://artifacts.elastic.co/packages/5.5/yum
 gpgcheck=1
 gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
